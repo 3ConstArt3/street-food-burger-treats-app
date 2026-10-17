@@ -150,7 +150,7 @@ function Signatures() {
       </Reveal>
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[300px]">
         {items.map((item, i) => {
-          const slot = signatureLayouts[i % signatureLayouts.length];
+          const slot = signatureLayouts[i % signatureLayouts.length]!;
           return (
             <Reveal key={item.id} className={slot.cls} delay={(i % 3) * 0.08}>
               <ProductCard item={item} layout={slot.layout} />
