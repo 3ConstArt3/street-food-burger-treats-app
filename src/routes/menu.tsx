@@ -7,7 +7,7 @@ const valid = (c: unknown): c is Category => c === "burgers" || c === "sides" ||
 
 export const Route = createFileRoute("/menu")({
   validateSearch: (s: Record<string, unknown>): { category?: Category } =>
-    valid(s.category) && s.category !== "burgers" ? { category: s.category } : {},
+    valid(s["category"]) && s["category"] !== "burgers" ? { category: s["category"] } : {},
   head: () => ({
     meta: [
       { title: "The Menu — Burgers, Sides & Drinks | Burger Treats Athens" },
@@ -61,7 +61,7 @@ function MenuPage() {
           role="tabpanel"
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={reduce ? undefined : { opacity: 0, y: -10 }}
+          exit={reduce ? { opacity: 1 } : { opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
           className={`mt-10 grid gap-6 sm:grid-cols-2 ${isBurgers ? "lg:grid-cols-3" : "lg:grid-cols-3"}`}
         >

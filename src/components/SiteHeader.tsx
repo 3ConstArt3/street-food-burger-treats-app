@@ -36,7 +36,7 @@ export function SiteHeader() {
               <Link
                 key={n.label}
                 to={n.to}
-                hash={n.hash}
+                {...(n.hash ? { hash: n.hash } : {})}
                 activeOptions={{ exact: true, includeHash: !!n.hash }}
                 className="relative text-sm font-semibold after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full data-[status=active]:after:w-full"
               >
@@ -71,7 +71,7 @@ export function SiteHeader() {
             <nav aria-label="Mobile" className="container-bt flex flex-col gap-2 pt-10">
               {nav.map((n, i) => (
                 <motion.div key={n.label} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 * i }}>
-                  <Link to={n.to} hash={n.hash} onClick={() => setOpen(false)} className="font-display text-5xl font-black uppercase hover:text-primary">
+                  <Link to={n.to} {...(n.hash ? { hash: n.hash } : {})} onClick={() => setOpen(false)} className="font-display text-5xl font-black uppercase hover:text-primary">
                     {n.label}
                   </Link>
                 </motion.div>
