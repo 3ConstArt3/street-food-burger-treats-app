@@ -41,14 +41,14 @@ export function SiteFooter() {
           <span className="text-cheddar">.</span>
         </h2>
 
-        <div className="mt-14 grid gap-10 border-t border-cream/15 pt-10 sm:grid-cols-2 lg:grid-cols-12">
-          <div className="lg:col-span-4">
+        <div className="mt-14 grid gap-10 border-t border-cream/15 pt-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.3fr_1fr] lg:gap-12">
+          <div>
             <p className="max-w-xs text-base leading-relaxed text-cream/80">
               Street-food burgers in {restaurant.city}. Smashed, stacked and served with good vibes.
             </p>
           </div>
 
-          <nav aria-label="Footer" className="lg:col-span-2 lg:col-start-6">
+          <nav aria-label="Footer">
             <h3 className="eyebrow mb-4 text-cream/55">Explore</h3>
             <ul className="space-y-2 font-display text-lg font-bold uppercase tracking-wide">
               {navLinks.map((l) => (
@@ -63,7 +63,7 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-3">
+          <div>
             <h3 className="eyebrow mb-4 text-cream/55">Visit</h3>
             <p className="flex items-start gap-2 text-sm text-cream">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-punch" /> {restaurant.address.value}
@@ -74,7 +74,7 @@ export function SiteFooter() {
             {restaurant.address.isPlaceholder && <p className="mt-3 text-xs text-cream/60">Location details coming soon.</p>}
           </div>
 
-          <div className="lg:col-span-2">
+          <div>
             <h3 className="eyebrow mb-4 text-cream/55">Follow</h3>
             <ul className="flex flex-wrap gap-2">
               {restaurant.socials.map((s) =>
