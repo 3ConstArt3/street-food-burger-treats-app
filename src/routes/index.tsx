@@ -6,7 +6,7 @@ import interior from "@/assets/interior.jpg";
 import { menu, sideImages } from "@/data/menu";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { MapArea, VisitActions, VisitDetails } from "@/components/VisitInfo";
+import { MapArea, VisitDetails } from "@/components/VisitInfo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -208,7 +208,6 @@ function FindUs() {
           <h2 className="display-lg mt-3">Your next<br /><span className="text-primary">stop.</span></h2>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">Drop by, grab a seat at the counter and order straight from the grill.</p>
           <div className="mt-10"><VisitDetails /></div>
-          <div className="mt-10"><VisitActions /></div>
         </Reveal>
         <Reveal delay={0.1}><MapArea className="aspect-[4/3]" /></Reveal>
       </div>
