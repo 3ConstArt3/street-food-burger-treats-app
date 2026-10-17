@@ -94,16 +94,34 @@ function Hero() {
           </motion.div>
         </div>
       </div>
-      <div className="overflow-hidden border-y-2 border-foreground bg-secondary py-3 text-secondary-foreground" aria-hidden>
-        <div className="flex gap-10 whitespace-nowrap font-display text-xl font-black uppercase">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} className="flex gap-10">
-              <span>Smash burgers</span><span className="text-accent">✦</span><span>Street fries</span><span className="text-accent">✦</span><span>Thick shakes</span><span className="text-accent">✦</span><span>Good vibes</span><span className="text-accent">✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
+      <Ticker />
     </section>
+  );
+}
+
+const TICKER_COPIES = 6;
+const TICKER_WORDS = ["Smash burgers", "Street fries", "Thick shakes", "Good vibes"];
+
+function Ticker() {
+  const reduce = useReducedMotion();
+  const track = Array.from({ length: TICKER_COPIES });
+  return (
+    <div className="overflow-hidden border-y-2 border-foreground bg-secondary py-3 text-secondary-foreground" aria-hidden>
+      <motion.div
+        className="flex w-max font-display text-xl font-black uppercase"
+        initial={{ x: 0 }}
+        animate={reduce ? { x: 0 } : { x: ["0%", `-${100 / TICKER_COPIES}%`] }}
+        transition={{ duration: 22, ease: "linear", repeat: Infinity }}
+      >
+        {track.map((_, i) => (
+          <span key={i} className="flex shrink-0 gap-10 pr-10">
+            {TICKER_WORDS.map((w) => (
+              <span key={w} className="flex gap-10">{w}<span className="text-accent">✦</span></span>
+            ))}
+          </span>
+        ))}
+      </motion.div>
+    </div>
   );
 }
 
