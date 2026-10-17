@@ -28,7 +28,7 @@ function Hero() {
   const reduce = useReducedMotion();
   return (
     <section className="relative overflow-hidden">
-      <span aria-hidden className="outline-text pointer-events-none absolute -right-10 bottom-0 select-none font-display text-[22vw] font-black uppercase leading-none text-foreground/10">Athens</span>
+      <span aria-hidden className="pointer-events-none absolute -right-10 bottom-0 select-none font-display text-[22vw] font-black uppercase leading-none text-foreground/[0.05]">Athens</span>
       <div className="container-bt relative grid items-center gap-8 py-12 md:py-20 lg:grid-cols-12">
         <div className="lg:col-span-6">
           <motion.p
