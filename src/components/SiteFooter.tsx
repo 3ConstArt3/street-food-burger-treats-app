@@ -53,7 +53,7 @@ export function SiteFooter() {
             <ul className="space-y-2 font-display text-lg font-bold uppercase tracking-wide">
               {navLinks.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} hash={l.hash} className={linkClass}>
+                  <Link to={l.to} {...(l.hash ? { hash: l.hash } : {})} className={linkClass}>
                     {l.label}
                     <ArrowUpRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                     <span className={underline} />
