@@ -1,5 +1,5 @@
-import { Clock, MapPin, Navigation, Phone } from "lucide-react";
-import { hasDirections, hasPhone, restaurant } from "@/data/restaurant";
+import { Clock, MapPin, Phone } from "lucide-react";
+import { restaurant } from "@/data/restaurant";
 
 export function PlaceholderBadge() {
   return <span className="eyebrow ml-2 rounded-full bg-accent px-2 py-0.5 text-[0.6rem] text-accent-foreground">Placeholder</span>;
