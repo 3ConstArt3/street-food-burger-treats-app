@@ -125,6 +125,18 @@ function Ticker() {
   );
 }
 
+// Puzzle-style composition: 12-column grid where each card has a purposeful span.
+// Desktop: featured card (6x2) anchors the left, a wide card tops the right,
+// two squares interlock in the middle, two wides close the composition.
+const signatureLayouts: { cls: string; layout: "featured" | "wide" | "standard" }[] = [
+  { cls: "sm:col-span-2 lg:col-span-6 lg:row-span-2", layout: "featured" },
+  { cls: "sm:col-span-2 lg:col-span-6", layout: "wide" },
+  { cls: "lg:col-span-3", layout: "standard" },
+  { cls: "lg:col-span-3", layout: "standard" },
+  { cls: "sm:col-span-2 lg:col-span-6", layout: "wide" },
+  { cls: "sm:col-span-2 lg:col-span-6", layout: "wide" },
+];
+
 function Signatures() {
   const items = menu.filter((m) => m.signature);
   return (
@@ -136,10 +148,15 @@ function Signatures() {
         </div>
         <Link to="/menu" className="btn btn-ghost self-start md:self-auto">View Full Menu <ArrowUpRight size={18} /></Link>
       </Reveal>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, i) => (
-          <Reveal key={item.id} delay={(i % 3) * 0.08}><ProductCard item={item} /></Reveal>
-        ))}
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[300px]">
+        {items.map((item, i) => {
+          const slot = signatureLayouts[i % signatureLayouts.length];
+          return (
+            <Reveal key={item.id} className={slot.cls} delay={(i % 3) * 0.08}>
+              <ProductCard item={item} layout={slot.layout} />
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );
