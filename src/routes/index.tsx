@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowRight, ArrowUpRight, Flame } from "lucide-react";
+import { ArrowRight, Flame } from "lucide-react";
 import heroBurger from "@/assets/hero-burger.png";
 import interior from "@/assets/interior.jpg";
 import { menu, sideImages } from "@/data/menu";
