@@ -94,6 +94,11 @@ function Hero() {
           </motion.div>
         </div>
       </div>
+      <Ticker />
+    </section>
+  );
+}
+
 const TICKER_COPIES = 6;
 const TICKER_WORDS = ["Smash burgers", "Street fries", "Thick shakes", "Good vibes"];
 
