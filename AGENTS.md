@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- ProductCard uses an explicit appearance variant for home signature cards; keep the standard menu appearance unchanged so home-only design requests do not affect the menu.
