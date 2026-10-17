@@ -1,5 +1,5 @@
-import { Clock, MapPin, Navigation, Phone } from "lucide-react";
-import { hasDirections, hasPhone, restaurant } from "@/data/restaurant";
+import { Clock, MapPin, Phone } from "lucide-react";
+import { restaurant } from "@/data/restaurant";
 
 export function PlaceholderBadge() {
   return <span className="eyebrow ml-2 rounded-full bg-accent px-2 py-0.5 text-[0.6rem] text-accent-foreground">Placeholder</span>;
@@ -32,24 +32,6 @@ export function VisitDetails() {
   );
 }
 
-export function VisitActions() {
-  const dirs = hasDirections();
-  const call = hasPhone();
-  return (
-    <div className="flex flex-col gap-3 sm:flex-row">
-      {dirs ? (
-        <a href={restaurant.mapsUrl.value} target="_blank" rel="noreferrer" className="btn btn-primary"><Navigation size={18} />Get Directions</a>
-      ) : (
-        <button type="button" disabled className="btn btn-primary"><Navigation size={18} />Directions coming soon</button>
-      )}
-      {call ? (
-        <a href={`tel:${restaurant.phone.tel}`} className="btn btn-ghost"><Phone size={18} />Call Us</a>
-      ) : (
-        <button type="button" disabled className="btn btn-ghost"><Phone size={18} />Phone coming soon</button>
-      )}
-    </div>
-  );
-}
 
 export function MapArea({ className = "" }: { className?: string }) {
   return (

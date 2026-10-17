@@ -8,7 +8,7 @@ const nav = [
   { label: "Home", to: "/" as const },
   { label: "Menu", to: "/menu" as const },
   { label: "Our Spot", to: "/" as const, hash: "our-spot" },
-  { label: "Contact", to: "/contact" as const },
+  { label: "Contact", to: "/" as const, hash: "find-us" },
 ];
 
 export function Wordmark({ className = "" }: { className?: string }) {
@@ -93,7 +93,7 @@ export function MobileActionBar() {
       {dirs ? (
         <a href={restaurant.mapsUrl.value} target="_blank" rel="noreferrer" className={`${item} bg-primary text-primary-foreground`}><Navigation size={18} />Directions</a>
       ) : (
-        <Link to="/contact" className={`${item} bg-primary text-primary-foreground`}><Navigation size={18} />Directions</Link>
+        <Link to="/" hash="find-us" className={`${item} bg-primary text-primary-foreground`}><Navigation size={18} />Directions</Link>
       )}
       {call ? (
         <a href={`tel:${restaurant.phone.tel}`} className={item}><Phone size={18} />Call</a>
