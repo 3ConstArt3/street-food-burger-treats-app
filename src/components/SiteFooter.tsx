@@ -23,8 +23,8 @@ export function SiteFooter() {
       </svg>
 
       {/* Restrained geometric accents */}
-      <span aria-hidden className="pointer-events-none absolute right-[6%] top-16 hidden h-28 w-28 rounded-full border-2 border-cheddar/40 md:block" />
-      <span aria-hidden className="pointer-events-none absolute right-[calc(6%+5.5rem)] top-36 hidden h-5 w-5 rotate-45 bg-punch md:block" />
+      <span aria-hidden className="pointer-events-none absolute right-[8%] top-64 hidden h-28 w-28 rounded-full border-2 border-cheddar/40 md:block" />
+      <span aria-hidden className="pointer-events-none absolute right-[calc(8%+6rem)] top-[22rem] hidden h-5 w-5 rotate-45 bg-punch md:block" />
 
       <div className="container-bt relative pt-16 md:pt-24">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -74,7 +74,7 @@ export function SiteFooter() {
             {restaurant.address.isPlaceholder && <p className="mt-3 text-xs text-cream/60">Location details coming soon.</p>}
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="eyebrow mb-4 text-cream/55">Follow</h3>
             <ul className="flex flex-wrap gap-2">
               {restaurant.socials.map((s) =>
