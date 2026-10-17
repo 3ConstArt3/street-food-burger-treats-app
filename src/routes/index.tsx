@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowRight, ArrowUpRight, Flame } from "lucide-react";
+import { ArrowRight, Flame } from "lucide-react";
 import heroBurger from "@/assets/hero-burger.png";
 import interior from "@/assets/interior.jpg";
 import { menu, sideImages } from "@/data/menu";
@@ -141,12 +141,9 @@ function Signatures() {
   const items = menu.filter((m) => m.signature);
   return (
     <section className="container-bt py-20 md:py-28">
-      <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-        <div>
-          <p className="eyebrow text-primary">02 — Signatures</p>
-          <h2 className="display-lg mt-3">Meet the<br />burgers</h2>
-        </div>
-        <Link to="/menu" className="btn btn-ghost self-start md:self-auto">View Full Menu <ArrowUpRight size={18} /></Link>
+      <Reveal>
+        <p className="eyebrow text-primary">02 — Signatures</p>
+        <h2 className="display-lg mt-3">Meet the<br />burgers</h2>
       </Reveal>
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[300px]">
         {items.map((item, i) => {
