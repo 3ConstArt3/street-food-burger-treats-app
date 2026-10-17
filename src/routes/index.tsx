@@ -95,13 +95,18 @@ function Hero() {
         </div>
       </div>
       <div className="overflow-hidden border-y-2 border-foreground bg-secondary py-3 text-secondary-foreground" aria-hidden>
-        <div className="flex gap-10 whitespace-nowrap font-display text-xl font-black uppercase">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} className="flex gap-10">
+        <motion.div
+          className="flex w-max font-display text-xl font-black uppercase"
+          initial={{ x: 0 }}
+          animate={reduce ? { x: 0 } : { x: ["0%", "-50%"] }}
+          transition={{ duration: 22, ease: "linear", repeat: Infinity }}
+        >
+          {[0, 1].map((half) => (
+            <span key={half} className="flex shrink-0 gap-10 pr-10">
               <span>Smash burgers</span><span className="text-accent">✦</span><span>Street fries</span><span className="text-accent">✦</span><span>Thick shakes</span><span className="text-accent">✦</span><span>Good vibes</span><span className="text-accent">✦</span>
             </span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
