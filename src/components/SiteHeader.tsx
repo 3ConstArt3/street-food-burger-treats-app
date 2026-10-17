@@ -45,7 +45,6 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <Link to="/contact" className="btn btn-primary hidden !h-11 md:inline-flex">Find Us</Link>
             <button
               type="button"
               className="grid h-11 w-11 place-items-center rounded-[10px] bg-secondary text-secondary-foreground md:hidden"
@@ -76,7 +75,6 @@ export function SiteHeader() {
                   </Link>
                 </motion.div>
               ))}
-              <Link to="/contact" onClick={() => setOpen(false)} className="btn btn-primary mt-8 w-full">Find Us</Link>
             </nav>
           </motion.div>
         )}
