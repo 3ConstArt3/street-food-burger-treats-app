@@ -19,7 +19,7 @@ export function SiteFooter() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/menu">Menu</Link></li>
               <li><Link to="/" hash="our-spot">Our Spot</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/" hash="find-us">Contact</Link></li>
             </ul>
           </div>
           <div>

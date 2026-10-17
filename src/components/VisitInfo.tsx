@@ -32,24 +32,6 @@ export function VisitDetails() {
   );
 }
 
-export function VisitActions() {
-  const dirs = hasDirections();
-  const call = hasPhone();
-  return (
-    <div className="flex flex-col gap-3 sm:flex-row">
-      {dirs ? (
-        <a href={restaurant.mapsUrl.value} target="_blank" rel="noreferrer" className="btn btn-primary"><Navigation size={18} />Get Directions</a>
-      ) : (
-        <button type="button" disabled className="btn btn-primary"><Navigation size={18} />Directions coming soon</button>
-      )}
-      {call ? (
-        <a href={`tel:${restaurant.phone.tel}`} className="btn btn-ghost"><Phone size={18} />Call Us</a>
-      ) : (
-        <button type="button" disabled className="btn btn-ghost"><Phone size={18} />Phone coming soon</button>
-      )}
-    </div>
-  );
-}
 
 export function MapArea({ className = "" }: { className?: string }) {
   return (
