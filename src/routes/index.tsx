@@ -6,7 +6,7 @@ import interior from "@/assets/interior.jpg";
 import { menu, sideImages } from "@/data/menu";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { MapArea, VisitDetails } from "@/components/VisitInfo";
+import { FindUsSection } from "@/components/VisitInfo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -214,22 +214,6 @@ function Sidekicks() {
   );
 }
 
-function FindUs() {
-  return (
-    <section id="find-us" className="scroll-mt-20 border-t-2 border-foreground">
-      <div className="container-bt grid gap-12 py-20 md:py-28 lg:grid-cols-2 lg:items-center">
-        <Reveal>
-          <p className="eyebrow text-primary">05 — Visit</p>
-          <h2 className="display-lg mt-3">Your next<br /><span className="text-primary">stop.</span></h2>
-          <p className="mt-6 max-w-md text-lg text-muted-foreground">Drop by, grab a seat at the counter and order straight from the grill.</p>
-          <div className="mt-10"><VisitDetails /></div>
-        </Reveal>
-        <Reveal delay={0.1}><MapArea className="aspect-[4/3]" /></Reveal>
-      </div>
-    </section>
-  );
-}
-
 function Home() {
   return (
     <>
@@ -237,7 +221,7 @@ function Home() {
       <Signatures />
       <Brand />
       <Sidekicks />
-      <FindUs />
+      <FindUsSection />
     </>
   );
 }
