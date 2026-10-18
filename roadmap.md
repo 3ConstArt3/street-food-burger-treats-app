@@ -5,6 +5,6 @@
 - [x] Test official menu data and verify category navigation and long names.
 
 # PDF menu showcase
-- [ ] Replace menu category grid with the official PDF preview and urban artwork.
-- [ ] Add an accessible, scrollable actual-PDF popup.
-- [ ] Verify document rendering, closing controls, and mobile layout.
+- [x] Replace menu category grid with the official PDF preview and urban artwork.
+- [x] Add an accessible, scrollable actual-PDF popup.
+- [x] Verify document rendering, closing controls, and mobile layout.
