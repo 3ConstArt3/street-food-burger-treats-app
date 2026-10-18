@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Flame } from "lucide-react";
 import heroBurger from "@/assets/hero-burger.png";
 import interior from "@/assets/interior.jpg";
-import { menu, sideImages } from "@/data/menu";
+import { menu, sidekickItems } from "@/data/menu";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { FindUsSection } from "@/components/VisitInfo";
@@ -12,9 +12,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Burger Treats — Big Bites. Good Vibes. | Athens Burger Spot" },
-      { name: "description", content: "Smashed burgers, street fries and thick shakes in Athens. Discover the Burger Treats menu and come find us." },
+      { name: "description", content: "Discover Burger Treats in Athens: six signature burgers, crispy sides, lemonade and chocolate milkshake. Explore our official menu." },
       { property: "og:title", content: "Burger Treats — Big Bites. Good Vibes." },
-      { property: "og:description", content: "Athens street-food burger spot. Smashed burgers, street fries and thick shakes." },
+      { property: "og:description", content: "Six signature burgers, crispy sides and refreshing drinks at Burger Treats Athens." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -187,8 +187,8 @@ function Brand() {
 
 function Sidekicks() {
   const tiles = [
-    { cat: "sides" as const, title: "Sides", sub: "Fries, rings & loaded bites", img: sideImages.sides, cls: "bg-accent text-accent-foreground" },
-    { cat: "drinks" as const, title: "Drinks", sub: "Thick shakes & house lemonade", img: sideImages.drinks, cls: "bg-primary text-primary-foreground" },
+    { cat: "sides" as const, title: "Sides", items: sidekickItems.sides, cls: "bg-accent text-accent-foreground" },
+    { cat: "drinks" as const, title: "Drinks", items: sidekickItems.drinks, cls: "bg-primary text-primary-foreground" },
   ];
   return (
     <section className="container-bt py-20 md:py-28">
@@ -202,10 +202,10 @@ function Sidekicks() {
             <Link to="/menu" search={{ category: t.cat }} className={`group relative flex min-h-[420px] flex-col justify-between overflow-hidden rounded-[16px] p-8 ${t.cls}`}>
               <div className="relative z-10">
                 <h3 className="font-display text-7xl font-black uppercase leading-none md:text-8xl">{t.title}</h3>
-                <p className="mt-2 font-semibold">{t.sub}</p>
+                <p className="mt-2 max-w-sm font-semibold">{t.items.map((item) => item.name).join(" · ")}</p>
               </div>
               <span className="relative z-10 inline-flex items-center gap-2 font-bold">See {t.title.toLowerCase()} <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} /></span>
-              <img src={t.img} alt="" loading="lazy" width={1024} height={1024} className="absolute -bottom-10 -right-10 w-[62%] rounded-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3 motion-reduce:transition-none" />
+               {t.items.find((item) => item.image)?.image && <img src={t.items.find((item) => item.image)?.image} alt="" loading="lazy" width={1024} height={1024} className="absolute -bottom-10 -right-10 w-[62%] rounded-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3 motion-reduce:transition-none" />}
             </Link>
           </Reveal>
         ))}
