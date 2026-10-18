@@ -11,3 +11,4 @@
 
 - ProductCard uses an explicit appearance variant for home signature cards; keep the standard menu appearance unchanged so home-only design requests do not affect the menu.
 - All product displays and sidekick selections derive from src/data/menu.ts so official content stays synchronized; images are optional to avoid presenting conflicting ingredients when no suitable photo exists.
+- The homepage testimonial section uses its own component and centralized browser-safe data module, keeping editorial presentation separate from official menu data.
