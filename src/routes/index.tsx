@@ -3,11 +3,10 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, Flame } from "lucide-react";
 import heroBurger from "@/assets/hero-burger.png";
 import interior from "@/assets/interior.jpg";
-import { menu } from "@/data/menu";
+import { menu, sidekickItems } from "@/data/menu";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { FindUsSection } from "@/components/VisitInfo";
-import { StreetTestimonials } from "@/components/StreetTestimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -186,13 +185,42 @@ function Brand() {
   );
 }
 
+function Sidekicks() {
+  const tiles = [
+    { cat: "sides" as const, title: "Sides", items: sidekickItems.sides, cls: "bg-accent text-accent-foreground" },
+    { cat: "drinks" as const, title: "Drinks", items: sidekickItems.drinks, cls: "bg-primary text-primary-foreground" },
+  ];
+  return (
+    <section className="container-bt py-20 md:py-28">
+      <Reveal>
+        <p className="eyebrow text-primary">04 — Extras</p>
+        <h2 className="display-lg mt-3">The perfect<br />sidekicks</h2>
+      </Reveal>
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {tiles.map((t, i) => (
+          <Reveal key={t.cat} delay={i * 0.1}>
+            <Link to="/menu" search={{ category: t.cat }} className={`group relative flex min-h-[420px] flex-col justify-between overflow-hidden rounded-[16px] p-8 ${t.cls}`}>
+              <div className="relative z-10">
+                <h3 className="font-display text-7xl font-black uppercase leading-none md:text-8xl">{t.title}</h3>
+                <p className="mt-2 max-w-sm font-semibold">{t.items.map((item) => item.name).join(" · ")}</p>
+              </div>
+              <span className="relative z-10 inline-flex items-center gap-2 font-bold">See {t.title.toLowerCase()} <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} /></span>
+               {t.items.find((item) => item.image)?.image && <img src={t.items.find((item) => item.image)?.image} alt="" loading="lazy" width={1024} height={1024} className="absolute -bottom-10 -right-10 w-[62%] rounded-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3 motion-reduce:transition-none" />}
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Home() {
   return (
     <>
       <Hero />
       <Signatures />
       <Brand />
-      <StreetTestimonials />
+      <Sidekicks />
       <FindUsSection />
     </>
   );
