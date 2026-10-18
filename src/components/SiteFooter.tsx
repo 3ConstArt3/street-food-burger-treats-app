@@ -71,7 +71,7 @@ export function SiteFooter() {
             <p className="mt-2 flex items-center gap-2 text-sm text-cream">
               <Phone className="h-4 w-4 shrink-0 text-punch" /> {restaurant.phone.value}
             </p>
-            {restaurant.address.isPlaceholder && <p className="mt-3 text-xs text-cream/60">Location details coming soon.</p>}
+            
           </div>
 
           <div>
