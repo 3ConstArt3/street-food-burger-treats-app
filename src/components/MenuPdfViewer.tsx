@@ -76,7 +76,7 @@ export function MenuPdfViewer() {
         const worker = await import("pdfjs-dist/build/pdf.worker.min.mjs?url");
         if (cancelled) return;
         pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
-        const loading = pdfjs.getDocument(MENU_PDF_URL);
+        const loading = pdfjs.getDocument({ url: MENU_PDF_URL });
         task = loading;
         const pdf = await loading.promise;
         if (!cancelled) setDocument(pdf);
