@@ -33,7 +33,10 @@ function PdfPage({ document, number, width }: { document: PDFDocumentProxy; numb
         setText(content.items.map((item) => "str" in item ? item.str : "").join(" "));
         setReady(true);
       } catch (error) {
-        if (!cancelled && !(error instanceof Error && error.name === "RenderingCancelledException")) setFailed(true);
+        if (!cancelled && !(error instanceof Error && error.name === "RenderingCancelledException")) {
+          console.error("Menu PDF page rendering failed", error);
+          setFailed(true);
+        }
       }
     }
     void render();
