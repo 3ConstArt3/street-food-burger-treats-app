@@ -33,7 +33,7 @@ export function StreetTestimonials() {
               initial={reduce ? false : { opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              whileHover={reduce ? undefined : { y: -5 }}
+              whileHover={reduce ? { y: 0 } : { y: -5 }}
               transition={{ duration: 0.45, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="street-review-top">
