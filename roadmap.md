@@ -3,3 +3,8 @@
 - [x] Synchronize homepage and menu references while preserving layouts.
 - [x] Keep suitable existing imagery; avoid inaccurate food photos and generate no new images.
 - [x] Test official menu data and verify category navigation and long names.
+
+# PDF menu showcase
+- [ ] Replace menu category grid with the official PDF preview and urban artwork.
+- [ ] Add an accessible, scrollable actual-PDF popup.
+- [ ] Verify document rendering, closing controls, and mobile layout.
