@@ -5,5 +5,5 @@
 - [x] Test official menu data and verify category navigation and long names.
 
 # Fourth homepage section
-- [ ] Replace Sidekicks with five centralized, clearly fictional editorial testimonials.
-- [ ] Verify the asymmetric layout, reduced motion, and unchanged menu categories.
+- [x] Replace Sidekicks with five centralized, clearly fictional editorial testimonials.
+- [x] Verify the asymmetric layout, reduced motion, and unchanged menu categories.
