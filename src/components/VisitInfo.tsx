@@ -55,8 +55,8 @@ function UrbanMap() {
           transition={{ type: "spring", stiffness: 260, damping: 14, delay: 0.3 }}
         >
           <span className="whitespace-nowrap rounded-full bg-accent px-3 py-1 font-display text-sm font-black uppercase text-accent-foreground">Burger Treats</span>
-          <span className="mt-2 grid h-16 w-16 rotate-45 place-items-center rounded-[50%_50%_50%_0] bg-primary text-primary-foreground shadow-[0_14px_24px_-8px_color-mix(in_oklab,var(--primary)_70%,transparent)]">
-            <MapPin size={26} className="-rotate-45" />
+          <span className="mt-2 grid h-16 w-16 -rotate-45 place-items-center rounded-[50%_50%_50%_0] bg-primary text-primary-foreground shadow-[0_14px_24px_-8px_color-mix(in_oklab,var(--primary)_70%,transparent)]">
+            <MapPin size={26} className="rotate-45" />
           </span>
         </motion.div>
         {!reduce && (
@@ -69,7 +69,7 @@ function UrbanMap() {
         )}
       </div>
 
-      <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
+      <div className="absolute inset-x-5 bottom-5 flex lg:left-20 items-end justify-between gap-4">
         <p className="eyebrow text-background/70">{a.coords}</p>
         <p className="eyebrow rounded-full border border-background/30 px-3 py-1 text-background/80">{a.area} · GR</p>
       </div>
