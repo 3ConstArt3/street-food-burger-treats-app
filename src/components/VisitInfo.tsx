@@ -38,7 +38,7 @@ function UrbanMap() {
       {/* compass */}
       <motion.div
         className="absolute right-5 top-5 grid h-14 w-14 place-items-center rounded-full border border-background/30 font-display text-sm font-black"
-        animate={reduce ? undefined : { rotate: [0, 8, 0] }}
+        animate={reduce ? {} : { rotate: [0, 8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden
       >
@@ -92,7 +92,7 @@ export function FindUsSection() {
       <motion.span
         aria-hidden
         className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full border-[28px] border-accent/40"
-        animate={reduce ? undefined : { scale: [1, 1.06, 1] }}
+        animate={reduce ? {} : { scale: [1, 1.06, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <div className="container-bt relative py-20 md:py-28">
