@@ -11,9 +11,9 @@ export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
       { title: "The Menu — Burgers, Sides & Drinks | Burger Treats Athens" },
-      { name: "description", content: "Explore the Burger Treats menu: signature smash burgers, street fries, onion rings, thick shakes and house lemonade." },
+      { name: "description", content: "The official Burger Treats menu: six burgers, crispy fries, chicken bites, onion rings, cola, lemonade, lemon ice tea and chocolate milkshake." },
       { property: "og:title", content: "The Menu | Burger Treats Athens" },
-      { property: "og:description", content: "Signature smash burgers, street fries and thick shakes." },
+      { property: "og:description", content: "Explore all 14 official Burger Treats menu items with ingredients and euro prices." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -69,7 +69,6 @@ function MenuPage() {
         </motion.div>
       </AnimatePresence>
 
-      <p className="mt-12 text-sm text-muted-foreground">Prices shown are for demonstration. Order and pay at the counter — no online ordering.</p>
     </section>
   );
 }

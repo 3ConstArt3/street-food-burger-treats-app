@@ -1,13 +1,6 @@
 import classic from "@/assets/burger-classic.jpg";
-import spicy from "@/assets/burger-spicy.jpg";
-import bbq from "@/assets/burger-bbq.jpg";
 import truffle from "@/assets/burger-truffle.jpg";
-import chicken from "@/assets/burger-chicken.jpg";
-import veggie from "@/assets/burger-veggie.jpg";
 import fries from "@/assets/side-fries.jpg";
-import rings from "@/assets/side-rings.jpg";
-import shake from "@/assets/drink-shake.jpg";
-import lemonade from "@/assets/drink-lemonade.jpg";
 
 export type Category = "burgers" | "sides" | "drinks";
 export const categories: { id: Category; label: string }[] = [
@@ -22,26 +15,33 @@ export type MenuItem = {
   name: string;
   description: string;
   price: number;
-  image: string;
+  image?: string;
+  imageAlt?: string;
   tag?: string;
   signature?: boolean;
 };
 
-// Demonstration prices in EUR.
+// Official Burger Treats Food Menu. Keep source wording and prices unchanged.
+// Only use existing photography that does not show conflicting ingredients.
 export const menu: MenuItem[] = [
-  { id: "og", category: "burgers", name: "The OG Treat", description: "Smashed beef, aged cheddar, house pickles and our secret Treat sauce on a toasted brioche.", price: 9.5, image: classic, tag: "Bestseller", signature: true },
-  { id: "inferno", category: "burgers", name: "Athens Inferno", description: "Pepper jack, fresh jalapeños, red onion and smoky chipotle mayo. Brings the heat.", price: 10.5, image: spicy, tag: "Spicy", signature: true },
-  { id: "smokehouse", category: "burgers", name: "Smokehouse Stack", description: "Crispy bacon, beer-battered onion rings, cheddar and sticky BBQ glaze.", price: 11.9, image: bbq, tag: "Loaded", signature: true },
-  { id: "truffle", category: "burgers", name: "Truffle Shroom", description: "Sautéed mushrooms, melted Swiss and black truffle aioli. Rich and earthy.", price: 12.5, image: truffle, signature: true },
-  { id: "cluck", category: "burgers", name: "Hot Honey Cluck", description: "Buttermilk fried chicken, hot honey drizzle, crunchy slaw and pickles.", price: 10.9, image: chicken, tag: "Crunchy", signature: true },
-  { id: "garden", category: "burgers", name: "Garden Halloumi", description: "Grilled halloumi, avocado, rocket and tomato on a seeded bun.", price: 10.2, image: veggie, tag: "Veggie", signature: true },
-  { id: "fries", category: "sides", name: "Street Fries", description: "Hand-cut, double-fried and tossed with sea salt and Greek oregano.", price: 3.9, image: fries, tag: "Classic" },
-  { id: "loaded-fries", category: "sides", name: "Feta Loaded Fries", description: "Street fries topped with crumbled feta, Treat sauce and spring onion.", price: 5.5, image: fries },
-  { id: "rings", category: "sides", name: "Onion Rings", description: "Beer-battered, golden and crunchy, with herby ranch dip.", price: 4.5, image: rings },
-  { id: "shake", category: "drinks", name: "Vanilla Thick Shake", description: "Real vanilla bean, whipped cream and a cherry on top.", price: 5.2, image: shake, tag: "Sweet" },
-  { id: "lemonade", category: "drinks", name: "Pink Lemonade", description: "House-made, freshly squeezed and lightly sparkling.", price: 3.8, image: lemonade },
-  { id: "shake-choc", category: "drinks", name: "Choc Fudge Shake", description: "Dark chocolate, fudge swirl and whipped cream.", price: 5.5, image: shake },
+  { id: "og", category: "burgers", name: "Classic Cheeseburger", description: "A juicy beef patty, melted cheddar, pickles, lettuce, tomato, and creamy burger sauce in a soft, toasted bun.", price: 8.5, image: classic, imageAlt: "Beef cheeseburger with cheddar, pickles and burger sauce", signature: true },
+  { id: "smokehouse", category: "burgers", name: "Smoky Bacon BBQ", description: "A beef patty, crispy bacon, cheddar, and caramelized onions, finished with smoky BBQ sauce in a buttery brioche bun.", price: 9.5, signature: true },
+  { id: "inferno", category: "burgers", name: "Spicy Jalapeño Burger", description: "A beef patty topped with melted cheddar, fiery jalapeños, tomato, and spicy mayo, packing a kick into every bite.", price: 9, signature: true },
+  { id: "cluck", category: "burgers", name: "Crispy Chicken Burger", description: "Crispy breaded chicken breast, fresh lettuce, pickles, and herb mayo in a lightly toasted brioche bun.", price: 8.5, signature: true },
+  { id: "truffle", category: "burgers", name: "Truffle Mushroom Burger", description: "A juicy beef patty, sautéed mushrooms, smoked cheese, and truffle mayo, layered with rich flavor and earthy aromas.", price: 10, image: truffle, signature: true },
+  { id: "garden", category: "burgers", name: "Crispy Portobello Burger", description: "A crispy breaded portobello mushroom filled with melted cheddar, topped with lettuce, tomato, and creamy burger sauce.", price: 8.5, signature: true },
+  { id: "fries", category: "sides", name: "Classic Crispy Fries", description: "Golden fries, crispy on the outside and fluffy on the inside, sprinkled with sea salt.", price: 3, image: fries, imageAlt: "Golden crispy fries" },
+  { id: "loaded-fries", category: "sides", name: "Bacon & Cheddar Fries", description: "Crispy fries loaded with warm cheddar sauce, crispy bacon, and fresh spring onions.", price: 5.5 },
+  { id: "chicken-bites", category: "sides", name: "Chicken Bites", description: "Juicy chicken breast bites in a crispy coating, served with sweet and tangy honey mustard sauce.", price: 5.5 },
+  { id: "rings", category: "sides", name: "Crispy Onion Rings", description: "Sweet onion rings coated in a crispy, golden batter, served with smoky BBQ sauce on the side.", price: 4.5 },
+  { id: "cola", category: "drinks", name: "Ice-Cold Cola", description: "330 ml", price: 2 },
+  { id: "lemonade", category: "drinks", name: "Fresh Lemonade", description: "400 ml", price: 3.5 },
+  { id: "ice-tea", category: "drinks", name: "Lemon Ice Tea", description: "400 ml", price: 3 },
+  { id: "shake", category: "drinks", name: "Chocolate Milkshake", description: "400 ml", price: 5 },
 ];
 
-export const sideImages = { sides: fries, drinks: shake };
+export const sidekickItems = {
+  sides: menu.filter((item) => item.category === "sides"),
+  drinks: menu.filter((item) => item.category === "drinks"),
+};
 export const formatPrice = (p: number) => `€${p.toFixed(2)}`;

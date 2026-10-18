@@ -210,7 +210,10 @@
   font-weight: 900;
   line-height: 1;
   letter-spacing: 0;
-  white-space: nowrap;
+  max-width: 94%;
+  text-align: center;
+  white-space: normal;
+  text-wrap: balance;
 }
 .street-card-price {
   position: absolute;
@@ -261,10 +264,10 @@
 @media (min-width: 1024px) {
   .street-card { aspect-ratio: auto; }
   .street-card--standard .street-card-ribbon { height: 56px; }
-  .street-card--standard .street-card-name { font-size: 22px; }
+  .street-card--standard .street-card-name { font-size: 20px; }
   .street-card--standard .street-card-price { width: 78px; height: 78px; font-size: 24px; right: 12px; bottom: 12px; }
   .street-card--featured { --ribbon-top: 12%; }
-  .street-card--featured .street-card-name { font-size: 42px; }
+  .street-card--featured .street-card-name { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .street-card, .street-card-photo { transition: none; }
